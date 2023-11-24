@@ -116,9 +116,13 @@ model = AI4DEM().to(device)
 # torch.minimum(s1, s2)
 def main():
 	ntime = 10 # time propogation
+
+    input_shape = (1, 1, ny, nx)
+
 	with torch.no_grad():
-	    for itime in range(1,ntime+1):
-	    	s = model(C)
+	    for itime in range(1,ntime+1): # time loop
+            for l in range(1,np):      # particle loop
+                s = model(C) 
 
  if __name__ == '__main__':
  	main()
