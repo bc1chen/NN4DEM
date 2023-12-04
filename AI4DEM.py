@@ -91,10 +91,10 @@ class AI4DEM(nn.Module):
         self.wzu_5.bias.data = bias_initializer
         self.wzd_5.bias.data = bias_initializer
 
-		def forward(self, C):
-			s1 = self.wxu_5(C) * self.wxd_5(C)
-			s2 = self.wxu_3(C) * self.wxd_3(C)
-			return torch.minmum(s1,s2)
+	def forward(self, C):
+		s1 = self.wxu_5(C) * self.wxd_5(C)
+		s2 = self.wxu_3(C) * self.wxd_3(C)
+		return torch.minmum(s1,s2)
 
 model = AI4DEM().to(device)
 
