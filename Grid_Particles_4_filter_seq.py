@@ -197,14 +197,12 @@ class AI4DEM(nn.Module):
         return diff
 
     def forward(self, grid_x, grid_y, mask, d, kn, fx_grid, fy_grid, input_shape, filter_size):
-        diffx = torch.zeros(input_shape, device=device) 
-        diffy = torch.zeros(input_shape, device=device)
         fx_grid = torch.zeros(input_shape, device=device) 
         fy_grid = torch.zeros(input_shape, device=device)
         for i in range(filter_size):
             for j in range(filter_size):
-                diffx = diffx + self.detector(grid_x, i, j) # individual
-                diffy = diffy + self.detector(grid_y, i, j) # individual
+                diffx = self.detector(grid_x, i, j) # individual
+                diffy = self.detector(grid_y, i, j) # individual
                 dist = torch.sqrt(diffx**2 + diffy**2)   
                 fx_grid = fx_grid + torch.where(torch.lt(dist,2*d), kn * (dist - 2 * d ) * diffx / torch.maximum(eplis, dist), zeros) # individual
                 fy_grid = fy_grid + torch.where(torch.lt(dist,2*d), kn * (dist - 2 * d ) * diffy / torch.maximum(eplis, dist), zeros) # individual
