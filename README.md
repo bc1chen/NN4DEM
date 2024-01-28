@@ -6,6 +6,6 @@
 #### Grid_particle_4_filter.py      --> Create filter function using shifting operation (simultanesouly - high memory)
 #### Grid_particle_4_filter_seq.py  --> Create filter function using shifting operation (sequentially   - low memory)
 
-#### AI4DEM_speed.py      --> **Initial AI4DEM code for testing the code (sequentially   - low memory) - do not consider boundary conditions**
-#### AI4DEM_speed_seq.py  --> **Initial AI4DEM code for testing the code (sequentially   - low memory) - do not consider boundary conditions** 
+#### AI4DEM_speed.py      --> ** Initial AI4DEM code for testing the code (sequentially   - low memory) - do not consider boundary conditions**
+#### AI4DEM_speed_seq.py  --> ** Initial AI4DEM code for testing the code (sequentially   - low memory) - do not consider boundary conditions** 
 
