@@ -1,4 +1,6 @@
-## AI4PDEs -> AI4DEM coupling with fluids
+# NN4DEM (Neural Netwwork framework for Discrete Element Method)
+
+This repository contains code devloped as part of a broader initiative to harness specialised AI hardware and software environments, marking a transition from traditional computational physics programming approaches.
 
 #### Default filter size -> 5 x 5 in 2D and 5 x 5 x 5 in 3D 
 
